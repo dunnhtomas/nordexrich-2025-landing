@@ -1,0 +1,174 @@
+/**
+ * Button Components
+ * Cross-browser compatible with modern effects
+ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-align: center;
+  transition: var(--transition-all);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  z-index: 5;
+  font-size: 1rem;
+  min-width: 160px;
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: 2px solid var(--primary-300);
+  outline-offset: 2px;
+}
+
+/* Button variants */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+  color: white;
+  box-shadow: 0 4px 12px -2px rgba(var(--primary-600-rgb), 0.5);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  box-shadow: 0 8px 18px -5px rgba(var(--primary-500-rgb), 0.6);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  background: linear-gradient(135deg, var(--primary-700), var(--primary-600));
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--success-500), var(--success-600));
+  color: white;
+  box-shadow: 0 4px 12px -2px rgba(var(--success-500-rgb), 0.5);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.btn-success:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, var(--success-400), var(--success-500));
+  box-shadow: 0 8px 18px -5px rgba(var(--success-500-rgb), 0.6);
+}
+
+.btn-success:active {
+  transform: translateY(0);
+  background: linear-gradient(135deg, var(--success-600), var(--success-500));
+}
+
+/* Button sizes */
+.btn-lg {
+  padding: var(--space-5) var(--space-8);
+  font-size: 1.125rem;
+  border-radius: var(--radius-lg);
+  min-width: 180px;
+}
+
+.btn-sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.875rem;
+  min-width: 120px;
+}
+
+.btn-block {
+  width: 100%;
+  display: flex;
+}
+
+/* Special registration button */
+.btn-register {
+  background: linear-gradient(135deg, #00C6FB, #10B981, #38BDF8);
+  background-size: 200% 100%;
+  /* Cross-browser animation */
+  -webkit-animation: gradientShift 5s ease infinite;
+  animation: gradientShift 5s ease infinite;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 24px -8px rgba(16, 185, 129, 0.5);
+  transition: all 0.3s var(--bounce-ease);
+  position: relative;
+  overflow: hidden;
+}
+
+@-webkit-keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.btn-register:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 32px -8px rgba(16, 185, 129, 0.6);
+  background-position: right center;
+}
+
+.btn-register:active {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px -6px rgba(16, 185, 129, 0.4);
+}
+
+/* Button loading state */
+.btn.loading {
+  position: relative;
+  pointer-events: none;
+  color: transparent;
+}
+
+.btn.loading::before {
+  content: '';
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  left: calc(50% - 0.625rem);
+  top: calc(50% - 0.625rem);
+  /* Cross-browser animation */
+  -webkit-animation: spin 0.8s linear infinite;
+  animation: spin 0.8s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Accessibility improvements */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn:disabled:hover {
+  transform: none !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn {
+    border: 2px solid currentColor;
+  }
+}
