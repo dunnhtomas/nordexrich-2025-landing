@@ -14,32 +14,17 @@
         <link rel="apple-touch-icon" href="images/logo2.png" />
         
         <!-- Preload Critical Resources -->
-        <link rel="preload" href="css/modern-2025-redesign.css" as="style" />
+        <link rel="preload" href="css/core.css" as="style" />
         <link rel="preload" href="css/components/header.css" as="style" />
         <link rel="preload" href="css/components/hero.css" as="style" />
-        <link rel="preload" href="js/modern-2025-mobile.js" as="script" />
+        <link rel="preload" href="js/app.js" as="script" />
         <link rel="preload" href="images/logo.png" as="image" />
         
-        <!-- Primary Stylesheet - Design System -->
-        <link href="css/modern-2025-redesign.css" rel="stylesheet" type="text/css" />
-        
-        <!-- Component Stylesheets -->
-        <link href="css/components/layout.css" rel="stylesheet" type="text/css" />
-        <link href="css/components/typography.css" rel="stylesheet" type="text/css" />
+        <!-- Core Stylesheets -->
+        <link href="css/core.css" rel="stylesheet" type="text/css" />
         <link href="css/components/header.css" rel="stylesheet" type="text/css" />
         <link href="css/components/hero.css" rel="stylesheet" type="text/css" />
-        <link href="css/components/forms.css" rel="stylesheet" type="text/css" />
         <link href="css/components/buttons.css" rel="stylesheet" type="text/css" />
-        <link href="css/components/cards.css" rel="stylesheet" type="text/css" />
-        <link href="css/components/testimonials.css" rel="stylesheet" type="text/css" />
-        <link href="css/components/features.css" rel="stylesheet" type="text/css" />
-        <link href="css/components/comments.css" rel="stylesheet" type="text/css" />
-        <link href="css/components/cta.css" rel="stylesheet" type="text/css" />
-        <link href="css/components/footer.css" rel="stylesheet" type="text/css" />
-        <link href="css/components/animations.css" rel="stylesheet" type="text/css" />
-        
-        <!-- Fallback Support for Legacy Content -->
-        <link href="css/fonts.css" rel="stylesheet" />
         
         <!-- Font Awesome Icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -90,7 +75,7 @@
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn" aria-label="Menu öffnen">
+                <button class="mobile-menu-btn" aria-label="Menu öffnen" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -119,24 +104,31 @@
                     
                     <div class="form-card" id="form">
                         <h3 class="form-title">Starten Sie noch heute</h3>
-                        <form class="registration-form">
+                        <form class="registration-form" action="form.php" method="POST">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="firstname" placeholder="Vorname" required />
+                                <label for="firstname" class="sr-only">Vorname</label>
+                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Vorname" required />
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="lastname" placeholder="Nachname" required />
+                                <label for="lastname" class="sr-only">Nachname</label>
+                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Nachname" required />
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" placeholder="E-Mail Adresse" required />
+                                <label for="email" class="sr-only">E-Mail</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="E-Mail Adresse" required />
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password" placeholder="Passwort erstellen" required />
+                                <label for="password" class="sr-only">Passwort</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Passwort erstellen" required />
                             </div>
                             <div class="form-group">
-                                <input type="tel" class="form-control" name="phone" placeholder="Telefonnummer" required />
+                                <label for="phone" class="sr-only">Telefonnummer</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Telefonnummer" required />
                                 <input type="hidden" name="subid" />
                             </div>
-                            <button type="submit" class="btn btn-success btn-lg btn-block btn-register">JETZT REGISTRIEREN</button>
+                            <button type="submit" class="btn btn-success btn-lg btn-block btn-register">
+                                <span>JETZT REGISTRIEREN</span>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -144,7 +136,7 @@
         </main>
         
         <!-- Scripts -->
-        <script src="js/modern-2025-mobile.js"></script>
+        <script src="js/app.js"></script>
         <script src="js/register.js"></script>
     </body>
 </html>
