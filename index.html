@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>NordexRich - Investieren in die Zukunft</title>
+        <meta name="description" content="NordexRich - Die führende Handelsplattform für automatisierte Investitionen mit 98.9% Erfolgsquote. Verdienen Sie zwischen €500 und €1,500 täglich mit unserer fortschrittlichen Technologie." />
+        <meta name="color-scheme" content="light" />
+        
+        <!-- Favicons -->
+        <link rel="icon" href="images/logo2.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="images/logo2.png" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="images/logo2.png" />
+        
+        <!-- Preload Critical Resources -->
+        <link rel="preload" href="css/modern-2025-redesign.css" as="style" />
+        <link rel="preload" href="css/components/header.css" as="style" />
+        <link rel="preload" href="css/components/hero.css" as="style" />
+        <link rel="preload" href="js/modern-2025-mobile.js" as="script" />
+        <link rel="preload" href="images/logo.png" as="image" />
+        
+        <!-- Primary Stylesheet - Design System -->
+        <link href="css/modern-2025-redesign.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Component Stylesheets -->
+        <link href="css/components/layout.css" rel="stylesheet" type="text/css" />
+        <link href="css/components/typography.css" rel="stylesheet" type="text/css" />
+        <link href="css/components/header.css" rel="stylesheet" type="text/css" />
+        <link href="css/components/hero.css" rel="stylesheet" type="text/css" />
+        <link href="css/components/forms.css" rel="stylesheet" type="text/css" />
+        <link href="css/components/buttons.css" rel="stylesheet" type="text/css" />
+        <link href="css/components/cards.css" rel="stylesheet" type="text/css" />
+        <link href="css/components/testimonials.css" rel="stylesheet" type="text/css" />
+        <link href="css/components/features.css" rel="stylesheet" type="text/css" />
+        <link href="css/components/comments.css" rel="stylesheet" type="text/css" />
+        <link href="css/components/cta.css" rel="stylesheet" type="text/css" />
+        <link href="css/components/footer.css" rel="stylesheet" type="text/css" />
+        <link href="css/components/animations.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Fallback Support for Legacy Content -->
+        <link href="css/fonts.css" rel="stylesheet" />
+        
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+        
+        <!-- JS adapter for tracking -->
+        <script type="application/javascript">
+        function getCookie (name) {
+            var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)')
+            var value = v ? v[2] : null
+            return value && value !== 'undefined' ? value : null
+        }
+        
+        function setCookie (name, value, days) {
+            var d = new Date()
+            d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * days)
+            document.cookie = name + '=' + value + ';path=/;expires=' + d.toUTCString()
+        }
+        
+        function getSubId () {
+            var params = new URLSearchParams(window.location.search)
+            if (!'{subid}'.match('{')) {
+                return '{subid}'
+            }
+            var clientSubid = '<?php echo isset($client) ? $client->getSubid() : "" ?>'
+            if (clientSubid && !/>/.test(clientSubid)) {
+                return clientSubid
+            }
+            return params.get('_subid') || params.get('subid') || getCookie('subid') || getCookie('_subid') || null
+        }
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            var params = new URLSearchParams(window.location.search)
+            var subid = getSubId()
+            setCookie('subid', subid)
+        })
+        </script>
+    </head>
+    
+    <body>
+        <!-- Header with Logo -->
+        <header class="header">
+            <div class="header-container container">
+                <div class="logo-wrapper">
+                    <a href="#leadform1" title="NordexRich Home">
+                        <img class="logo-image" src="images/logo.png" alt="NordexRich Logo" />
+                        <span class="nordex-logo-text">NordexRich</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" aria-label="Menu öffnen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+        
+        <main>
+            <!-- Hero Section -->
+            <section id="leadform1" class="hero section">
+                <div class="hero-container container">
+                    <div class="hero-content">
+                        <h1 class="hero-heading">
+                            VERDIENST 
+                            <div class="hero-amount">VON €500 BIS €1.500</div> 
+                            PRO TAG
+                        </h1>
+                        <p class="hero-description">
+                            DANK DER FORTSCHRITTLICHSTEN HANDELSPLATTFORM MIT 98,9% ERFOLGSQUOTE
+                        </p>
+                        
+                        <div class="hero-buttons">
+                            <a href="#form" class="btn btn-success btn-lg">JETZT REGISTRIEREN</a>
+                        </div>
+                    </div>
+                    
+                    <div class="form-card" id="form">
+                        <h3 class="form-title">Starten Sie noch heute</h3>
+                        <form class="registration-form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="firstname" placeholder="Vorname" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="lastname" placeholder="Nachname" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" placeholder="E-Mail Adresse" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="password" placeholder="Passwort erstellen" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control" name="phone" placeholder="Telefonnummer" required />
+                                <input type="hidden" name="subid" />
+                            </div>
+                            <button type="submit" class="btn btn-success btn-lg btn-block btn-register">JETZT REGISTRIEREN</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Scripts -->
+        <script src="js/modern-2025-mobile.js"></script>
+        <script src="js/register.js"></script>
+    </body>
+</html>
